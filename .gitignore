@@ -1,0 +1,109 @@
+# .gitignore
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+.virtualenv/
+pip-wheel-metadata/
+*.egg-info/
+.eggs/
+
+# Flask-specific files
+instance/
+.webassets-cache
+
+# Pytest cache
+.pytest_cache/
+
+# Mypy cache
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Flask logs and output files
+*.log
+*.out
+*.pid
+
+# Local environments settings
+*.env
+.env.*
+.envrc
+venv.bak/
+env.bak/
+
+# Logs and databases
+game_logs.txt
+*.log
+*.sqlite3
+*.db
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+
+# Sphinx documentation
+docs/_build/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# IPython history
+.history
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.bak
+*.swp
+*~
