@@ -1,5 +1,3 @@
-# app.py
-
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import logging
@@ -23,7 +21,7 @@ def serve_index():
 
 @app.route('/<path:path>')
 def serve_static(path):
-    if os.path.exists(path):
+    if os.path.isfile(path):
         return send_from_directory('.', path)
     else:
         return jsonify({"error": "File not found."}), 404
@@ -31,7 +29,7 @@ def serve_static(path):
 @app.route('/log_move', methods=['POST'])
 def log_move():
     try:
-        data = request.get_json()
+        data = request.get_json(force=True)
         move = data.get('move', 'No move description provided.')
         logging.info(move)
         return jsonify({"status": "success", "message": "Move logged."}), 200
@@ -41,6 +39,5 @@ def log_move():
 
 if __name__ == '__main__':
     # Ensure the log file exists
-    if not os.path.exists(log_file):
-        open(log_file, 'w').close()
+    open(log_file, 'a').close()
     app.run(host='0.0.0.0', port=5000)
